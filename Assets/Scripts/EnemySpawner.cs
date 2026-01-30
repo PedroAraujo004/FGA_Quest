@@ -36,6 +36,7 @@
             enemies[i]= newEnemy;
 
             newEnemy.name= "Enemy: " +i;
+            Debug.Log("Enemy #" +i+ " Spawned at " +enemies[i].transform.position);
         }
             
         }
