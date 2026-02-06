@@ -10,13 +10,11 @@
 
         [SerializeField] int maxEnemies= 5;
 
-        public GameObject[] enemies;
+        public List <GameObject> enemies= new List<GameObject> ();
 
         // Start is called before the first frame update
         void Start()
         {
-            enemies= new GameObject[maxEnemies];
-
             StartCoroutine(spawnEnemy());
         }
 
@@ -33,7 +31,7 @@
         {
             yield return new WaitForSeconds(spawnInterval);
             GameObject newEnemy= Instantiate(enemyPrefab, new Vector2(Random.Range(-5,5), Random.Range(-5, 5)), Quaternion.identity);
-            enemies[i]= newEnemy;
+            enemies.Add(newEnemy);
 
             newEnemy.name= "Enemy: " +i;
             Debug.Log("Enemy #" +i+ " Spawned at " +enemies[i].transform.position);

@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public int health = 100;
     public float speed = 5.5f;
     public string PlayerName = "Pedro";
+
+    List <string> backpack= new List <string> ();
     
     public Animator animator; 
 
@@ -14,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        backpack.Add("espada");
+        backpack.Add("poção");
+
         if (animator == null)
             animator = GetComponent<Animator>();
     }
